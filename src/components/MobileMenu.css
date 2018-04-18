@@ -1,0 +1,25 @@
+.mobile-menu{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.mobile-menu ul{
+    list-style: none;
+    padding: 0 20px;
+    margin: 0
+}
+
+li{
+    padding: 2% 0;
+}
+
+li > ul{
+    background: rgba(128, 128, 128, .4)
+}
+
+li:not(:last-child){
+    border-bottom: 1px solid rgba(128, 128, 128, .2);
+    
+}
