@@ -34,6 +34,7 @@ class App extends Component {
       <div>
         <Header></Header>
         <div>{recipes.map(this.renderRec)}</div>
+        
       </div>
     );
   }
