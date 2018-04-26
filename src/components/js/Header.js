@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import '../components/Header.css';
-import MobileMenu from '../components/MobileMenu.js';
+import '../css/Header.css';
+import MobileMenu from '../js/MobileMenu';
 
 class Header extends Component{
     
@@ -18,11 +18,11 @@ class Header extends Component{
         const elem = <MobileMenu itemList={menuList} clicked={this.state.clickMenu}></MobileMenu>;
         if(this.state.clickMenu){
             lineClasses.push('is-clicked');
-            menuClasses.push('yellowed', 'rounded');
+            menuClasses.push(/*'yellowed', */'rounded-circle');
         }
         return (
-            <div>
-                <div className="header container">
+            <div className="header-container">
+                <div className="header">
                     <div className={"menu " + menuClasses.join(' ')} onClick={this.animateMenu}>
                         <div className={"line-1 " + lineClasses.join(' ')}></div>
                         <div className={"line-2 " + lineClasses.join(' ')}></div>
@@ -30,16 +30,7 @@ class Header extends Component{
                     </div>
                     <div className="indicator-box">
                         <div className="indicator">
-                            <i className="icon ion-arrow-swap"></i>
-                            <div className="count"></div>
-                        </div>
-                        <div className="indicator">
-                            <i className="icon ion-heart"></i>
-                            <div className="count"></div>
-                        </div>
-                        <div className="indicator">
-                            <i className="icon ion-bag"></i>
-                            <div className="count"></div>
+                            <i className="icon ion-spoon"></i>
                         </div>
                     </div>
                 </div>
@@ -53,15 +44,9 @@ class Header extends Component{
 }
 
 const menuList = [
-    'Home',
-    'Shop',
-    'Blog',
-    {'Pages': ['Contact', 'FAQ', '404 Page', 'Coming soon']},
-    'Products',
-    'Brands',
-    'Today\'s deals',
-    'New arrivals',
-    'Gift cards'
-];
+    ['Profile', 'dashboard'],
+    ['Create New Recipe', 'new'],
+    ['Show Existing Recipes', 'recipes'],
+]
 
 export default Header;

@@ -1,0 +1,43 @@
+.app{
+    height: 200vh
+}
+
+.header-box{
+    width: 100%;
+    top: 0px;
+}
+
+.main-box{
+    top: 75px;
+    z-index: 1;
+}
+
+.sticky{
+    position: sticky;
+    z-index: 99999
+}
+
+.fixed{
+    position: fixed;
+    top: 0;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+@media screen and (max-width: 640px){
+
+}
+
+@media screen and (max-width: 1440px){
+
+}
+
+@media screen and (min-width: 1440px){
+
+}

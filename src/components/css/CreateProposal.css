@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
+.proposition-box{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+}
+
+h1{
+    text-align: center;
+    width: 70%;
+    margin: 5% auto;
+}
+
+p{
+    text-align: center;
+}
+
+.create-btn{
+    align-self: center;
+}
+
+a{
+    color: black
+}
