@@ -2,8 +2,8 @@ const express = require('express');
 const mysql = require('mysql');
 const axios = require('axios');
 const recipes = require('./routes/recipes');
-const db = require('./src/util/db');
-const pool = db.getPool();
+const db = require('./util/db');
+const pool = db.getPool(); 
 const cors = require('cors'); 
 const bodyParser = require('body-parser');
 

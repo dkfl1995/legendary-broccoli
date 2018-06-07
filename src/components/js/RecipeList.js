@@ -8,19 +8,13 @@ class RecipeList extends React.Component{
         super(props); 
         this.state = {
             recipes: this.props.recipeList,
-        };
+        }
         this.renderRec = this.renderRec.bind(this);
     }
     componentWillReceiveProps(nextProps){
         var answ = nextProps !== this.props;
         return answ;
     }
-    // shouldComponentUpdate(nextProps, nextState){
-    //     let cond = nextState.Loaded !== this.state.Loaded || nextProps !== this.props;
-    //     if (cond){
-    //         return true;
-    //     }
-    // }
     renderRec(recipes){
         var recipe, id, title, img, info;
         for(let key in recipes){
