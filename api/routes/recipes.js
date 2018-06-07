@@ -1,6 +1,6 @@
 var express = require('express'); 
 var route = express.Router(); 
-const db = require('../src/util/db');
+const db = require('../util/db');
 const pool = db.getPool();
 const bodyParser = require('body-parser');
 
