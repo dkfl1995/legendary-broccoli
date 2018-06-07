@@ -17,16 +17,8 @@ class Recipes extends React.Component{
         this.views = this.views.bind(this);
         this.getRec();
     }
-    
-    shouldComponentUpdate(nextProps, nextState){
-        //nextState.Loaded !== this.state.Loaded || 
-        return true;
-    }
     componentWillMount(){
         this.views();
-    }
-    componentDidMount(){
-        
     }
     getRec(_){
         fetch('http://localhost:5000/recipes')
@@ -41,7 +33,7 @@ class Recipes extends React.Component{
     views(){
         const {recipes} = this.state;
         const howManyRecipes = recipes.length;
-        const view = howManyRecipes > 0 ? 'hi' : <Route component={CreateProposal}/>
+        const view = howManyRecipes > 0 ? null : <Route component={CreateProposal}/>
     }
     render() {
         const {recipes} = this.state;

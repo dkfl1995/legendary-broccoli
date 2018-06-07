@@ -9,8 +9,7 @@ import Main from '../js/Main';
 
 class App extends Component {
   constructor(props){
-   super(props); 
-   
+    super(props); 
   }
   render(){
     return(

@@ -8,7 +8,7 @@ class RecipeList extends React.Component{
         super(props); 
         this.state = {
             recipes: this.props.recipeList,
-        }
+        };
         this.renderRec = this.renderRec.bind(this);
     }
     componentWillReceiveProps(nextProps){

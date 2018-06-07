@@ -14,9 +14,6 @@ class CreateRecipe extends React.Component{
         this.createRecipe = this.createRecipe.bind(this);
         this.handleChangeImg = this.handleChangeImg.bind(this);
         this.handleChangeInfo = this.handleChangeInfo.bind(this);
-    } 
-    componentWillUnmount(){
-        this.createRecipe();
     }
     handleChangeTitle(event){
         console.log(event.target.value);
@@ -34,18 +31,21 @@ class CreateRecipe extends React.Component{
         this.setState({info: value});   
     }
     createRecipe(){
-        console.log(this.state);
-        fetch('http://localhost:5000/recipe/new',{
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(this.state) 
-        })
-        .then(response => response.json(this.state))
-        .then(data => {
-            data == "success" ? this.setState({msg: "Thanks"}): null; 
-            console.log(data)
-        })
-        .catch(err => console.log(err));
+        if(!this.state.img || !this.state.info || !this.state.title){
+            
+        }else{
+            fetch('http://localhost:5000/recipe/new',{
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify(this.state) 
+            })
+            .then(response => response.json(this.state))
+            .then(data => {
+                data == "success" ? this.setState({msg: "Thanks"}): null; 
+                console.log(data)
+            })
+            .catch(err => console.log(err));
+        }
     }
     render(){
         // console.log(this.state);

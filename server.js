@@ -4,7 +4,7 @@ const axios = require('axios');
 const recipes = require('./routes/recipes');
 const db = require('./src/util/db');
 const pool = db.getPool();
-const cors = require('cors');
+const cors = require('cors'); 
 const bodyParser = require('body-parser');
 
 const PORT = process.env.port || 5000;
@@ -27,10 +27,10 @@ app.get('/recipes', (req, res) => {
                 console.log(err);
                 connection.query(`CREATE TABLE recipes(ID int NOT NULL PRIMARY KEY, TITLE varchar(200), IMG varchar(200), INFO LONGTEXT)`, (err, result) => {
                     if(err) console.log(err);
+                    console.log(result);
                     res.json({type: "success", code: 200, data: result});
                 });
             }
-            console.log(result + '/n');
             res.json({type:"success", code: 200, data: result});
             if(!result){
                 console.log("zero");
