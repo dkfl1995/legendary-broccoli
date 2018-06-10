@@ -1,0 +1,10 @@
+export const RECEIVE_RECIPES = 'RECEIVE_RECIPES';
+export const RECEIVE_RECIPES_FAILED = 'RECEIVE_RECIPES_FAILED';
+export const RECEIVE_RECEIVE_ON = 'RECEIVE_RECIPES_ON';
+export const CREATE_NEW_RECIPE = 'CREATE_NEW_RECIPE';
+export const EDIT_RECIPE = 'EDIT_RECIPE';
+export const DELETE_RECIPE = 'DELETE_RECIPE';
+
+export const CREATE_NEW_ACC = 'CREATE_NEW_ACC';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';

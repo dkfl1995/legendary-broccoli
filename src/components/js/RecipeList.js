@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router, Route, Link, Switch} from 'react-router';
 import '../css/RecipeList.css';
 import Recipes from "./Recipes";
+import RecipeListElem from "./RecipeElem";
 
 class RecipeList extends React.Component{
     constructor(props){
@@ -10,10 +11,6 @@ class RecipeList extends React.Component{
             recipes: this.props.recipeList,
         }
         this.renderRec = this.renderRec.bind(this);
-    }
-    componentWillReceiveProps(nextProps){
-        var answ = nextProps !== this.props;
-        return answ;
     }
     renderRec(recipes){
         var recipe, id, title, img, info;
@@ -27,9 +24,7 @@ class RecipeList extends React.Component{
             }else if(key == "INFO"){
                 info = recipes[key];
             }
-            title ? recipe = <div className="recipe-box" key={id}>
-                {title}
-            </div> : null;
+            (title && info) ? recipe = <RecipeListElem title={title} img={img} info={info} /> : null;
         }
         return recipe;
     }
@@ -37,7 +32,7 @@ class RecipeList extends React.Component{
         const data = this.props.recipeList;
         return(
             <div>
-                <div class="recipe-list">{data ? data.map(this.renderRec) : null}</div>
+                <div className="recipe-list">{data ? data.map(this.renderRec) : null}</div>
             </div>
         );
     }

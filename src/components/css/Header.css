@@ -1,3 +1,5 @@
+
+
 .yellowed{
     background: yellow;
     color: black;
@@ -7,7 +9,7 @@
     position: relative;
     z-index: 2;
     display: flex;
-    background: #007aff;
+    background: #EAEFED;
     width: 100%;
     justify-content: space-between;
 }
@@ -28,7 +30,7 @@
 .line-1,
 .line-2,
 .line-3 {
-    background-color: white;
+    background-color: #2C4259;
     height: 3px;
     width: 22px;
     margin-bottom: 5px;
@@ -60,18 +62,42 @@
 }
 .indicator{
     font-size: 36px;
-    color: whitesmoke;
+    color: #2C4259;
     margin: auto 15px;
 }
 
 @media screen and (max-width: 640px){
-
+    .minified_logo{
+        display: block;
+    }
+    .full-size_logo{
+        display: none;
+    }
+    
 }
 
-@media screen and (max-width: 1440px){
-
+@media screen and (min-width: 640px) and (max-width: 1368px){
+    .minified_logo{
+        display: none;
+    }
+    .full-size_logo{
+        display: block;   
+    }
+    .header_links{
+        display: inline-block;
+        font-size: 1.25rem;
+        margin: 0 3px;
+        position: relative;
+        transform: translateY(-50%);
+        top:50%;
+    }
 }
 
-@media screen and (min-width: 1440px){
-
+@media screen and (min-width: 1368px){
+    .minified_logo{
+        display: none;
+    }
+    .full-size_logo{
+        display: block;   
+    }
 }

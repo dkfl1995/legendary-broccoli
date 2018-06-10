@@ -18,7 +18,7 @@ class App extends Component {
             <Header/>
           </div>
           <div className="relative main-box">
-            <Main bgImgList/>
+            <Main/>
           </div> 
         </div>
     );

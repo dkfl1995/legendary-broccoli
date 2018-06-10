@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const RecipeListElem = ({props}) => {
+const RecipeListElem = ({props}) => {
     return(
         <div className="recipe-block col-lg-6">
             <div>
@@ -12,3 +12,6 @@ export const RecipeListElem = ({props}) => {
         </div>
     )
 }
+
+export default RecipeListElem;
+

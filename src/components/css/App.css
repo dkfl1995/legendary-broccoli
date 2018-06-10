@@ -1,3 +1,12 @@
+@font-face{
+    font-family: "Overpass Mono", "Open Sans";
+    src: url('https://fonts.googleapis.com/css?family=Open+Sans');
+}
+
+.overpass{
+    font-family: "Overpass Mono";
+}
+
 .app{
     height: 200vh
 }

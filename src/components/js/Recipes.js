@@ -20,7 +20,7 @@ class Recipes extends React.Component{
     componentWillMount(){
         this.views();
     }
-    getRec(_){
+    getRec(){
         fetch('http://localhost:5000/recipes')
         .then(response => response.json())
         .then(data => {
@@ -28,7 +28,7 @@ class Recipes extends React.Component{
             this.setState({recipes: data.data, Loaded: true});
         })
         .then(data => this.render())
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     }
     views(){
         const {recipes} = this.state;

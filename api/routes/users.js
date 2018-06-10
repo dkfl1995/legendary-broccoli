@@ -1,5 +1,6 @@
 var express = require('express'); 
 var route = express.Router(); 
+const bcrypt = require('bcrypt');
 const db = require('../util/db');
 const pool = db.getPool();
 const bodyParser = require('body-parser');
@@ -7,19 +8,19 @@ const bodyParser = require('body-parser');
 var jsonParser = bodyParser.json({ type: 'application/json' });
 
 route.post('/new', jsonParser, (req, res) => {
-    console.log(req.body);
-    res.json("hey");
-    var postQuery = "INSERT INTO recipes SET TITLE = ?, IMG = ?, INFO = ?";
-    var recipe = {
-        title: req.body.title,
-        img: req.body.img,
-        info: req.body.info,
+    var newPW = req.body.password;
+    var salt = bcrypt.genSaltSync();
+    var hashPW = bcrypt.hashSync(newPW, salt);
+    var postQuery = "INSERT INTO `users` SET login = ?, password = ?";
+    var credentials = {
+        login: req.body.login,
+        password: hashPW
     };
     pool.getConnection((err, connection) => {
         console.log(recipe.info);
         if(err) console.log(err);
-        connection.query(postQuery, [recipe.title, recipe.img, recipe.info], (err, rows, fields) => {
-            console.log("Inserting New recipe");
+        connection.query(postQuery, [credentials.login, credentials.password], (err, rows, fields) => {
+            console.log("New user");
             if(err) {
                 console.log(err);
                 res.json(err);
